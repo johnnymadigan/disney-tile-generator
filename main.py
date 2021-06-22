@@ -11,7 +11,7 @@
 #         '*8888.   '88888>       88"    88"    88"
 #           88888    '8888>        "~     "~     "~
 #           `8888>    `888                           
-#            "8888     8%     johnny.madigan@icloud.com
+#            "8888     8%           Johnny Madigan
 #             `"888x:-"    https://johnnymadigan.github.io/
 #       
 # -----------------------Statement of Authorship------------------------#
@@ -185,8 +185,6 @@ fixed_pattern_17 = [['G7', 'H7', 'X'],
 
 # --------------Function for Assessing Your Solution-------------------#
 #
-# The function in this section will be used to assess your solution.
-#
 # The following function creates a random data set specifying a
 # tessellation to draw.  Your program must work for any data set that
 # can be returned by this function.  The results returned by calling
@@ -292,8 +290,9 @@ def random_pattern():
     # Return the tessellation pattern
     return pattern
 
+
+
 # --------------------------Student Solution--------------------------#
-#
 # Majority of solution functions have been extracted, see all other Python files.
 
 def legend():
@@ -413,11 +412,6 @@ def tessellate(pattern):
 
 
 
-# --------------------------------------------------------------------#
-#
-#                           End of submission
-#                           ~JOHNNY MADIGAN~
-#
 # --------------------------------Main---------------------------------#
 
 title("Disney Icons") # Window title

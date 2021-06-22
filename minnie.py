@@ -1,17 +1,17 @@
 from turtle import *
 import shapes
 
-# MINNIE MOUSE function
-# Draws Minnie starting from the top left corner of a tile
-# (do not change code)
-#
 def draw_minnie():
+    """
+    Draws Minnie Mouse.
+    """
+
     # Background
     setheading(0)
     forward(shapes.single // 2)
     right(shapes.angle)
     forward(7)
-    shapes.draw_star('plum', 35)
+    shapes.draw_star('#673147', 35) # plum
     setheading(shapes.angle)
     forward(7)
     setheading(180)
@@ -107,7 +107,7 @@ def draw_minnie():
     setheading(shapes.angle)
     forward(4)
     pendown()
-    fillcolor('#800000')
+    fillcolor('#800000') # crimson
     begin_fill()
     setheading(240)
     circle(9, 195)
@@ -136,7 +136,7 @@ def draw_minnie():
     forward(33)
     setheading(shapes.angle)
     forward(25)
-    fillcolor('deep pink')
+    fillcolor('#ff1493') # deep pink
     begin_fill()
     setheading(100)
     shapes.draw_oval(7)
@@ -145,7 +145,7 @@ def draw_minnie():
     forward(8)
     setheading(shapes.angle)
     forward(10)
-    fillcolor('hot pink')
+    fillcolor('#FF69B4') # hot pink
     begin_fill()
     setheading(170)
     shapes.draw_oval(12)

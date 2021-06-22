@@ -2,13 +2,10 @@
 from turtle import *
 import shapes
 
-# ------------------------------------------
-#               BROKEN TILES          
-# ------------------------------------------
-# BROKEN LARGE TILE function
-# draws cracks on large tiles
-#
 def break_large_tile():
+    """
+    Draws crack over large tiles.
+    """
     color('#FFFFFF') # white
     fillcolor('#FFFFFF') # white
     setheading(157)
@@ -76,10 +73,11 @@ def break_large_tile():
     penup()
 
 
-# BROKEN SMALL TILE function
-# draws cracks on small tiles
-#
+
 def break_small_tile():
+    """
+    Draws crack over small tiles.
+    """
     color('#FFFFFF') # white
     fillcolor('#FFFFFF') # white
     setheading(100)
@@ -142,10 +140,11 @@ def break_small_tile():
     penup()
 
 
-# BROKEN TALL TILE function
-# draws cracks on tall tiles
-#
+
 def break_tall_tile():
+    """
+    Draws crack over tall tiles.
+    """
     color('#FFFFFF') # white
     fillcolor('#FFFFFF') # white
     setheading(0)
@@ -200,10 +199,11 @@ def break_tall_tile():
     penup()
 
 
-# BROKEN WIDE TILE function
-# draws cracks on wide tiles
-#
+
 def break_wide_tile():
+    """
+    Draws crack over wide tiles.
+    """
     color('#FFFFFF') # white
     fillcolor('#FFFFFF') # white
     pendown()

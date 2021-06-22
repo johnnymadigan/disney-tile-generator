@@ -1,4 +1,3 @@
-
 from turtle import *
 import shapes
 import mickey
@@ -6,62 +5,61 @@ import minnie
 import donald
 import goofy
 
-# ------------------------------------------
-#                   TILES          
-# ------------------------------------------
-# LARGE TILE function
-# draws a large red tile starting from top left corner
-#
 def draw_large_tile():
+    """
+    Draws large 2x2 red tile starting from top left corner.
+    Draws Mickey.
+    """
     setheading(shapes.angle)
     forward(101)
     setheading(0)
     pendown()
     width(2)
     color('#800000') # maroon
-    fillcolor('#FF0000')
+    fillcolor('#FF0000') # red
     begin_fill()
     for border in range(4):
         forward(shapes.double)
         right(shapes.angle)
     end_fill()
     penup()
-    # Draws Mickey image
     mickey.draw_mickey()
 
 
-# SMALL TILE function
-# draws a small pink tile starting from top left corner
-#
 def draw_small_tile():
+    """
+    Draws small 1x1 pink tile starting from top left corner.
+    Draws Minnie.
+    """
     setheading(shapes.angle)
     forward(1)
     setheading(0)
     pendown()
     width(2)
-    color('#800000')
-    fillcolor('pink')
+    color('#800000') # maroon
+    fillcolor('#FFC0CB') # pink
     begin_fill()
     for border in range(4):
         forward(shapes.single)
         right(shapes.angle)
     end_fill()
     penup()
-    # Draws Minnie image
     minnie.draw_minnie()
 
 
-# TALL TILE function
-# draws a tall blue tile starting from top left corner
-#
+
 def draw_tall_tile():
+    """
+    Draws tall 1x2 blue tile starting from top left corner.
+    Draws Donald.
+    """
     setheading(shapes.angle)
     forward(101)
     setheading(0)
     pendown()
     width(2)
-    color('#800000')
-    fillcolor('light blue')
+    color('#800000') # maroon
+    fillcolor('#add8e6') # light blue
     begin_fill()
     for border in range(4):
         forward(shapes.single)
@@ -70,14 +68,15 @@ def draw_tall_tile():
         right(shapes.angle)
     end_fill()
     penup()
-    # Draws Donald image
     donald.draw_donald()
 
 
-# WIDE TILE function
-# draws a wide orange tile starting from top left corner
-#
+
 def draw_wide_tile():
+    """
+    Draws small 2x1 orange tile starting from top left corner.
+    Draws Goofy.
+    """
     setheading(shapes.angle)
     forward(1)
     setheading(0)
@@ -93,5 +92,4 @@ def draw_wide_tile():
         right(shapes.angle)
     end_fill()
     penup()
-    # Draws Goofy image
     goofy.draw_goofy()

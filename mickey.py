@@ -1,16 +1,11 @@
 from turtle import *
 import shapes
-# ------------------------------------------
-#               DISNEY ICONS          
-# ------------------------------------------
-# MICKEY MOUSE function
-# Draws Mickey starting from the top left corner of a tile
-# (do not change code)
-#
+
 def draw_mickey():
     """
     Draws Mickey Mouse.
     """
+    
     setheading(0)
     forward(shapes.single)
     right(shapes.angle)

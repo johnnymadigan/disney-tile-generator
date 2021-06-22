@@ -1,17 +1,17 @@
 from turtle import *
 import shapes
 
-# GOOFY function
-# Draws Goofy starting from the top left corner of a tile
-# (do not change code)
-#
 def draw_goofy():
+    """
+    Draws Goofy.
+    """
+
     # Background
     setheading(0)
     forward(shapes.single)
     right(shapes.angle)
     forward(5)
-    shapes.draw_star('darkorange', 35)
+    shapes.draw_star('#ff8c00', 35) # dark orange
     setheading(shapes.angle)
     forward(5)
     setheading(180)
@@ -26,7 +26,7 @@ def draw_goofy():
     color('#000000') # black
     pendown()
     width(2)
-    fillcolor('yellow green')
+    fillcolor('#9acd32') # yellow green
     begin_fill()
     forward(15)
     setheading(60)
@@ -117,7 +117,7 @@ def draw_goofy():
     forward(5)
     setheading(270)
     forward(22)
-    fillcolor('bisque')
+    fillcolor('#ffe4c4') # bisque
     setheading(50)
     begin_fill()
     shapes.draw_oval(15)
