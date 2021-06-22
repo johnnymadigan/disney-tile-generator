@@ -20,7 +20,7 @@
 # What is this project?
 This project is my first *Python* assignment at the *Queensland University of Technology*. The project uses *Turtle Graphics* to draw *Disney* icons as tiles in a grid. Given a randomly generated pattern, the program can successfully fill the grid with these tiles, varying in size, design, with some broken.
 
-![run button](.\img\eg.gif)
+![run button](/img/eg.gif)
 
 
 # How to run via the Terminal
@@ -45,12 +45,12 @@ foo@bar:~$ python2 main.py
 - Launch *VScode*.
 - Select Python Interpreter version 2.7 or 3.8.
 
-![run button](.\img\py-version.png)
+![run button](/img/py-version.png)
 
 - Open the project folder in *VScode*.
 - Select main.py and click run.
 
-![run button](.\img\run-button.png)
+![run button](/img/run-button.png)
 
 # Dependencies
 Relies on *Turtle Graphics* and therefore *tkinter*. If your Python Interpreter version supports Tk then you can use that to run main.py. Versions 2.7 and 3.8 have been proven to work.
