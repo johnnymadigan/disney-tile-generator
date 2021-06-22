@@ -76,7 +76,6 @@ def create_drawing_canvas(bg_colour='#d3d3d3'): # Hex codes: light grey
     Set up the canvas for the turtle drawing.
 
     :param bg_colour: background colour
-    :param line_colour: grid line colour
     """
 
     # Set up the drawing canvas with enough space for the grid and legend padded around
@@ -93,7 +92,6 @@ def release_drawing_canvas():
     """
     Ends the program by releasing the canvas to the OS.
     """
-    tracer(False)
     done()
 
 # -------------Test Data for Use During Code Development--------------#
@@ -295,10 +293,17 @@ def random_pattern():
 # --------------------------Student Solution--------------------------#
 # Majority of solution functions have been extracted, see all other Python files.
 
-def legend():
+def legend(show_turtle=False, turtle_speed=0):
     """
     Draws legends with visuals & accompying text describing it.
+    
+    :param show_turtle: shows/hides the turtle
+    :param turtle_speed: speed at which the turtle draws at
     """
+
+    speed(turtle_speed)
+    tracer(show_turtle)
+
     # GOTO TOP LEFT POSITION
     goto(-(grid_width * cell_size) // 2 - 250, 250)
     setheading(0)
@@ -337,10 +342,17 @@ def legend():
 
 
 
-def tessellate(pattern):
+def tessellate(pattern, show_turtle=False, turtle_speed=0):
     """
     Fills the grid with tiles as per the provided dataset.
+
+    :param pattern: a randomly generated pattern encoded in nested lists
+    :param show_turtle: shows/hides the turtle
+    :param turtle_speed: speed at which the turtle draws at
     """
+
+    speed(turtle_speed)
+    tracer(show_turtle)
 
     # For each tile's instructions, grab the first cell coordinates to begin drawing the tile
     for commands in pattern:
@@ -418,12 +430,20 @@ title("Disney Icons") # Window title
 
 create_drawing_canvas('#F5F5F5') # Hex codes: white smoke
 
-speed(0) # Drawing speed increases from 1-10 (exception: 0 = fastest)
 
-tracer(False) # True = show the turtle drawing at the speed above
+# Fills cells with Disney characters
+# 1st param is a bool, True to show turtle drawing at a defined speed
+# 2nd param is an int, drawing speed increases from 1-10 (exception: 0 = fastest)
+tessellate(random_pattern(), False, 0)
 
-legend() # Draw legend
+# !FOR DEVELOPMENT ONLY!
+# Comment out above and uncomment below to use a hard-coded pattern
+# 1st param is a pattern, see earlier section for all hard-coded patterns
+#tessellate(fixed_pattern_16)
 
-tessellate(random_pattern())  # Fills cells with Disney characters
+# Draws the legend
+# 1st param is a bool, True to show turtle drawing at a defined speed
+# 2nd param is an int, drawing speed increases from 1-10 (exception: 0 = fastest)
+legend(True, 0)
 
 release_drawing_canvas() # Exit gracefully

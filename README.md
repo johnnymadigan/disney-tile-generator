@@ -29,7 +29,7 @@ This project is my first *Python* assignment at the *Queensland University of Te
 
 ```zsh
 foo@bar:~$ ls
-README.md   goofy.py    main.py    ...
+README.md    goofy.py    main.py    ...
 ```
 
 - Type "python2 main.py" to launch the program
