@@ -18,32 +18,29 @@
 #
 #                       IFB104 Building IT Systems
 #
-#  This is an individual assessment item.  By submitting this
-#  code I agree that it represents my own work.  I am aware of
-#  the University rule that a student must not act in a manner
-#  which constitutes academic dishonesty as stated and explained
-#  in QUT's Manual of Policies and Procedures, Section C/5.3
-#  "Academic Integrity" and Section E/2.1 "Student Code of Conduct".
+# This is an individual assessment item.  By submitting this code I agree 
+# that it represents my own work. I am aware of the University rule that a 
+# student must not act in a manner which constitutes academic dishonesty as 
+# stated and explained in QUT's Manual of Policies and Procedures, Section 
+# C/5.3 "Academic Integrity" and Section E/2.1 "Student Code of Conduct".
 #
 #                      Student name: Johnny Madigan
 #
-#  NB: Files submitted without a completed copy of this statement
-#  will not be marked.  All files submitted will be subjected to
-#  software plagiarism analysis using the MoSS system
-#  (http://theory.stanford.edu/~aiken/moss/).
+# NB: Files submitted without a completed copy of this statement will not 
+# be marked.  All files submitted will be subjected to software plagiarism 
+# analysis using the MoSS system (http://theory.stanford.edu/~aiken/moss/).
 #
 # --------------------------Task Description--------------------------#
 #
 #                             TESSELLATION
 #
-#  This assignment tests your skills at processing data stored in
-#  lists, creating reusable code and following instructions to display
-#  a complex visual image.  The incomplete Python program below is
-#  missing a crucial function, "tessellate".  You are required to
-#  complete this function so that when the program is run it fills
-#  a rectangular space with differently-shaped tiles, using data
-#  stored in a list to determine which tiles to place and where.
-#  See the instruction sheet accompanying this file for full details.
+# This assignment tests your skills at processing data stored in lists, 
+# creating reusable code and following instructions to display a complex 
+# visual image. The incomplete Python program below is missing a crucial 
+# function, "tessellate". You are required to complete this function so 
+# that when the program is run it fills a rectangular space with differently
+# shaped tiles, using data stored in a list to determine which tiles to 
+# place and where.
 #
 # ------------------------Imports & Constants-------------------------#
 
@@ -63,140 +60,55 @@ y_margin = cell_size // 2  # Pixels, the size of the margin below/above the grid
 window_height = grid_height * cell_size + y_margin * 2
 window_width = grid_width * cell_size + x_margin * 2
 
-small_font = ('Arial', 18, 'normal')  # font for the coords
-big_font = ('Arial', 24, 'normal')  # font for any other text
+small_font = ('Arial', 18, 'normal')  # Font for the coords
+big_font = ('Arial', 24, 'normal')  # Font for any other text
 
 # Assertions for the canvas - do not change
 assert cell_size >= 80, 'Cells must be at least 80x80 pixels in size'
 assert grid_width >= 8, 'Grid must be at least 8 squares wide'
 assert grid_height >= 6, 'Grid must be at least 6 squares high'
 
-
-# -----Functions for Creating the Drawing Canvas----------------------#
-#
-# The functions in this section are called by the main program to
-# manage the drawing canvas for your image.  You should not change
-# any of the code in this section.
-#
+# ----------Functions for Creating the Drawing Canvas----------------------#
 
 # Set up the canvas and draw the background for the overall image
-def create_drawing_canvas(bg_colour='#d3d3d3',
-                          line_colour='#708090',
-                          draw_grid=True, mark_legend=True):
-    # Set up the drawing canvas with enough space for the grid and
-    # legend
+def create_drawing_canvas(bg_colour='#d3d3d3'): # Hex codes: light grey
+    """
+    Set up the canvas for the turtle drawing.
+
+    :param bg_colour: background colour
+    :param line_colour: grid line colour
+    """
+
+    # Set up the drawing canvas with enough space for the grid and legend padded around
     setup(window_width, window_height)
     bgcolor(bg_colour)
 
-    # Draw as quickly as possible
-    tracer(False)
-
-    # Get ready to draw the grid
+    # Reset
     penup()
-    color(line_colour)
-    width(2)
-
-    # Determine the left-bottom coords of the grid
-    left_edge = -(grid_width * cell_size) // 2
-    bottom_edge = -(grid_height * cell_size) // 2
-
-    # Optionally draw the grid
-    if draw_grid:
-
-        # Draw the horizontal grid lines
-        setheading(0)  # face east
-        for line_no in range(0, grid_height + 1):
-            penup()
-            goto(left_edge, bottom_edge + line_no * cell_size)
-            pendown()
-            forward(grid_width * cell_size)
-
-        # Draw the vertical grid lines
-        setheading(90)  # face north
-        for line_no in range(0, grid_width + 1):
-            penup()
-            goto(left_edge + line_no * cell_size, bottom_edge)
-            pendown()
-            forward(grid_height * cell_size)
-
-        # Draw each of the labels on the x axis
-        penup()
-        y_offset = 27  # pixels
-        for x_label in range(0, grid_width):
-            goto(left_edge + (x_label * cell_size) + (cell_size // 2), bottom_edge - y_offset)
-            write(chr(x_label + ord('A')), align='center', font=small_font)
-
-        # Draw each of the labels on the y axis
-        penup()
-        x_offset, y_offset = 7, 10  # pixels
-        for y_label in range(0, grid_height):
-            goto(left_edge - x_offset, bottom_edge + (y_label * cell_size) + (cell_size // 2) - y_offset)
-            write(str(y_label + 1), align='right', font=small_font)
-
-        # Mark centre coordinate (0, 0)
-        home()
-        dot(15)
-
-    # Optionally mark the spaces for drawing the legend
-    if mark_legend:
-        # Left side
-        goto(-(grid_width * cell_size) // 2 - 75, -25)
-        write('Put your\nlegend here', align='right', font=big_font)
-        # Right side
-        goto((grid_width * cell_size) // 2 + 75, -25)
-        write('Put your\nlegend here', align='left', font=big_font)
-
-        # Reset everything ready for the student's solution
     pencolor('black')
     width(1)
-    penup()
     home()
-    tracer(True)
 
-
-# End the program and release the drawing canvas to the operating
-# system.  By default the cursor (turtle) is hidden when the
-# program ends - call the function with False as the argument to
-# prevent this.
-def release_drawing_canvas(hide_cursor=True):
-    tracer(True)  # ensure any drawing still in progress is displayed
-    if hide_cursor:
-        hideturtle()
+def release_drawing_canvas():
+    """
+    Ends the program by releasing the canvas to the OS.
+    """
+    tracer(False)
     done()
 
-
-# -----Test Data for Use During Code Development----------------------#
+# -------------Test Data for Use During Code Development--------------#
 #
-# The "fixed" data sets in this section are provided to help you
-# develop and test your code.  You can use them as the argument to
-# the "tesselate" function while perfecting your solution.  However,
-# they will NOT be used to assess your program.  Your solution will
-# be assessed using the "random_pattern" function appearing below.
-# Your program must work correctly for any data set that can be
-# generated by the random_pattern function.
+# The hard-coded data sets in this section are provided to help you develop
+# and test your code. You can use them as the argument to the "tesselate" 
+# function while perfecting your solution. However, they will NOT be used to 
+# assess your program. Your solution will be assessed using the "random_pattern" 
+# function appearing below. Your program must work correctly for any data set 
+# that can be generated by the random_pattern function.
 #
-# Each of the data sets is a list of instructions, each specifying
-# where to place a particular tile.  The general form of each
-# instruction is
+# Each of the data sets is a list of instructions, each specifying what cells the
+# tile will fill and its condition (X = broken). The instructions are encoded like:
 #
-#     [squares, mystery_value]
-#
-# where there may be one, two or four squares in the grid listed
-# at the beginning.  This tells us which grid squares must be
-# filled by this particular tile.  This information also tells
-# us which shape of tile to produce.  A "big" tile will occupy
-# four grid squares, a "small" tile will occupy one square, a
-# "wide" tile will occupy two squares in the same row, and a
-# "tall" tile will occupy two squares in the same column.  The
-# purpose of the "mystery value" will be revealed in Part B of
-# the assignment.
-#
-# Note that the fixed patterns below assume the grid has its
-# default size of 10x7 squares.
-#
-
-# Some starting points - the following fixed patterns place
-# just a single tile in the grid, in one of the corners.
+#                         [squares, condition]
 
 # Small tile
 fixed_pattern_0 = [['A1', 'O']]
@@ -213,9 +125,6 @@ fixed_pattern_5 = [['J6', 'J7', 'X']]
 # Big tile
 fixed_pattern_6 = [['A6', 'B6', 'A7', 'B7', 'O']]
 fixed_pattern_7 = [['I1', 'J1', 'I2', 'J2', 'X']]
-
-# Each of these patterns puts multiple copies of the same
-# type of tile in the grid.
 
 # Small tiles
 fixed_pattern_8 = [['E1', 'O'],
@@ -274,19 +183,9 @@ fixed_pattern_17 = [['G7', 'H7', 'X'],
                     ['A5', 'B5', 'A6', 'B6', 'X'],
                     ['D2', 'D3', 'X']]
 
-
-# If you want to create your own test data sets put them here,
-# otherwise call function random_pattern to obtain data sets
-# that fill the entire grid with tiles.
-
-#
-# --------------------------------------------------------------------#
-
-
-# -----Function for Assessing Your Solution---------------------------#
+# --------------Function for Assessing Your Solution-------------------#
 #
 # The function in this section will be used to assess your solution.
-# Do not change any of the code in this section.
 #
 # The following function creates a random data set specifying a
 # tessellation to draw.  Your program must work for any data set that
@@ -308,8 +207,11 @@ fixed_pattern_17 = [['G7', 'H7', 'X'],
 # As well as the coordinates for each tile, an additional value which
 # is either an 'O' or 'X' accompanies each one.  The purpose of this
 # "mystery" value will be revealed in Part B of the assignment.
-#
-def random_pattern(print_pattern=True):
+
+def random_pattern():
+    """
+    Generate random data set.
+    """
     # Keep track of squares already occupied
     been_there = []
     # Initialise the pattern
@@ -385,130 +287,92 @@ def random_pattern(print_pattern=True):
     # Remove any residual structure in the pattern
     shuffle(pattern)
     # Print the pattern to the shell window, nicely laid out
-    print('Draw the tiles in this sequence:')
+    print('\nRandomly generated tiles:\n')
     print(str(pattern).replace('],', '],\n'))
     # Return the tessellation pattern
     return pattern
 
-
 # --------------------------Student Solution--------------------------#
-
-# ------------------------------------------
-#                   LEGEND       
-# ------------------------------------------
-# LEGEND function
-# Places legends with visuals & text describing it
+#
+# Majority of solution functions have been extracted, see all other Python files.
 
 def legend():
-    # LEFT SIDE
+    """
+    Draws legends with visuals & accompying text describing it.
+    """
+    # GOTO TOP LEFT POSITION
     goto(-(grid_width * cell_size) // 2 - 250, 250)
     setheading(0)
 
-    # Draws Mickey image
+    # Draws Mickey image & adds text
     tiles.draw_large_tile()
     goto(-(grid_width * cell_size) // 2 - 65, 10)
-
-    # Adds Mickey text
     write('Mickey Mouse', align='right', font="Verdana 15")
 
+    # GOTO BOTTOM LEFT POSITION
     goto(-(grid_width * cell_size) // 2 - 200, -50)
     setheading(0)
 
-    # Draws Minnie image
+    # Draws Minnie image & adds text
     tiles.draw_small_tile()
     goto(-(grid_width * cell_size) // 2 - 65, -190)
-
-    # Adds Minnie text
     write('Minnie Mouse', align='right', font="Verdana 15")
 
-    # RIGHT SIDE
+    # GOTO TOP RIGHT POSITION
     goto((grid_width * cell_size) // 2 + 90, 250)
     setheading(0)
 
-    # Draws Donald image
+    # Draws Donald image & adds text
     tiles.draw_tall_tile()
     goto((grid_width * cell_size) // 2 + 220, 10)
-
-    # Adds Donald Text
     write('Donald Duck', align='right', font="Verdana 15")
 
+    # GOTO BOTTOM RIGHT POSITION
     goto((grid_width * cell_size) // 2 + 40, -50)
     setheading(0)
 
-    # Draws Goofy image
+    # Draws Goofy image & adds text
     tiles.draw_wide_tile()
-
-    # Adds Goofy text
     goto((grid_width * cell_size) // 2 + 180, -190)
     write('Goofy', align='right', font="Verdana 15")
 
 
-# ------------------------------------------
-#               TESSELLATE          
-# ------------------------------------------
-# TESSELLATE function
-# Fills the grid with tiles as per the provided dataset
 
 def tessellate(pattern):
-    # Draws the legend
-    legend()
+    """
+    Fills the grid with tiles as per the provided dataset.
+    """
 
-    # ------------------------------------------
-    # Decides where a tile should be placed by taking the first
-    # string in a command and converting it into coordinates
-    #
+    # For each tile's instructions, grab the first cell coordinates to begin drawing the tile
     for commands in pattern:
         grid_square = commands[0]
 
-        # Converts a X coordinate
-        if grid_square[0] == 'A':
-            x = ord('A') - 565
-        if grid_square[0] == 'B':
-            x = ord('B') - 466
-        if grid_square[0] == 'C':
-            x = ord('C') - 367
-        if grid_square[0] == 'D':
-            x = ord('D') - 268
-        if grid_square[0] == 'E':
-            x = ord('E') - 169
-        if grid_square[0] == 'F':
-            x = ord('F') - 70
-        if grid_square[0] == 'G':
-            x = ord('G') + 29
-        if grid_square[0] == 'H':
-            x = ord('H') + 128
-        if grid_square[0] == 'I':
-            x = ord('I') + 227
-        if grid_square[0] == 'J':
-            x = ord('J') + 326
+        # Converts X coord
+        if grid_square[0] == 'A': x = ord('A') - 565
+        elif grid_square[0] == 'B': x = ord('B') - 466
+        elif grid_square[0] == 'C': x = ord('C') - 367
+        elif grid_square[0] == 'D': x = ord('D') - 268
+        elif grid_square[0] == 'E': x = ord('E') - 169
+        elif grid_square[0] == 'F': x = ord('F') - 70
+        elif grid_square[0] == 'G': x = ord('G') + 29
+        elif grid_square[0] == 'H': x = ord('H') + 128
+        elif grid_square[0] == 'I': x = ord('I') + 227
+        elif grid_square[0] == 'J': x = ord('J') + 326
 
-        # Converts a Y coordinate
-        if grid_square[1] == '1':
-            y = -250
-        if grid_square[1] == '2':
-            y = -150
-        if grid_square[1] == '3':
-            y = -50
-        if grid_square[1] == '4':
-            y = 50
-        if grid_square[1] == '5':
-            y = 150
-        if grid_square[1] == '6':
-            y = 250
-        if grid_square[1] == '7':
-            y = 350
+        # Converts Y coord
+        if grid_square[1] == '1': y = -250
+        elif grid_square[1] == '2': y = -150
+        elif grid_square[1] == '3': y = -50
+        elif grid_square[1] == '4': y = 50
+        elif grid_square[1] == '5': y = 150
+        elif grid_square[1] == '6': y = 250
+        elif grid_square[1] == '7': y = 350
 
-        # Goes to the coordinates
+        # Send turtle to coords
         goto(x, y)
 
-        # ------------------------------------------
-        # Joins all strings in a command to be able to count
-        # any repeated numbers (representing rows)
-        #
-        # This is to differentiate between long & wide tiles
-        # as wide tiles need to fill multiple rows unlike tall tiles
-        #
-        # Counts rows 1, 2, 3, 4, 5, 6, 7
+        # Joins all strings in a command to be able to count any repeated numbers (representing rows).
+        # This is to differentiate between long & wide tiles as wide tiles need to fill multiple rows unlike tall tiles.
         string = " ".join(commands)
         count_1s = string.count('1')
         count_2s = string.count('2')
@@ -518,91 +382,54 @@ def tessellate(pattern):
         count_6s = string.count('6')
         count_7s = string.count('7')
 
-        # ------------------------------------------
-        # Determines which tile is needed by counting the
-        # amount of grid spaces that need filling in a command
-        #
-        # Additionally if a command ends with an 'X' the tile
-        # will be broken
-        #
+        # Determines which tile is needed by counting the amount of grid spaces that need filling in a command.
+        # Additionally if a command ends with an 'X' the tile will be broken.
+
         # Small tiles
         if len(commands) == 2:
             tiles.draw_small_tile()
-            if commands[-1] == 'X':
-                broken_tiles.break_small_tile()
+            if commands[-1] == 'X': broken_tiles.break_small_tile()
 
         # Wide OR tall tiles
         elif len(commands) == 3:
-            if count_1s == 2 or count_2s == 2 \
-                    or count_3s == 2 or count_4s == 2 \
-                    or count_5s == 2 or count_6s == 2 \
-                    or count_7s == 2:
+            if count_1s == 2 or \
+                count_2s == 2 or \
+                count_3s == 2 or \
+                count_4s == 2 or \
+                count_5s == 2 or \
+                count_6s == 2 or \
+                count_7s == 2:
                 tiles.draw_wide_tile()
-                if commands[-1] == 'X':
-                    broken_tiles.break_wide_tile()
+                if commands[-1] == 'X': broken_tiles.break_wide_tile()
 
             else:
                 tiles.draw_tall_tile()
-                if commands[-1] == 'X':
-                    broken_tiles.break_tall_tile()
+                if commands[-1] == 'X': broken_tiles.break_tall_tile()
 
         # Large tiles
         elif len(commands) == 5:
             tiles.draw_large_tile()
-            if commands[-1] == 'X':
-                broken_tiles.break_large_tile()
+            if commands[-1] == 'X': broken_tiles.break_large_tile()
 
 
-# ------------------------------------------
-#
-#           End of submission
-#           ~JOHNNY MADIGAN~
-#
+
 # --------------------------------------------------------------------#
-
-
-# -----Main Program---------------------------------------------------#
 #
-# This main program sets up the background, ready for you to start
-# drawing your solution.  Do not change any of this code except
-# as indicated by the comments marked '*****'.
+#                           End of submission
+#                           ~JOHNNY MADIGAN~
 #
+# --------------------------------Main---------------------------------#
 
-# Set up the drawing canvas
-# ***** You can change the background and line colours, and choose
-# ***** whether or not to draw the grid and mark the places for the
-# ***** legend, by providing arguments to this function call
-create_drawing_canvas('#F5F5F5', '#ffb6c1', mark_legend=False) # white smoke, light pink
+title("Disney Icons") # Window title
 
-# Control the drawing speed
-# ***** Change the following argument if you want to adjust
-# ***** the drawing speed
-speed('fastest')
+create_drawing_canvas('#F5F5F5') # Hex codes: white smoke
 
-# Decide whether or not to show the drawing being done step-by-step
-# ***** Set the following argument to False if you don't want to wait
-# ***** forever while the cursor moves slowly around the screen
-tracer(False)
+speed(0) # Drawing speed increases from 1-10 (exception: 0 = fastest)
 
-# Give the drawing canvas a title
-# ***** Replace this title with a description of your solution's theme
-# ***** and its tiles
-title("Disney Icons (Mickey, Minnie, Donald & Goofy)")
+tracer(False) # True = show the turtle drawing at the speed above
 
-### Call the student's function to follow the path
-### ***** While developing your program you can call the tessellate
-### ***** function with one of the "fixed" data sets, but your
-### ***** final solution must work with "random_pattern()" as the
-### ***** argument.  Your tessellate function must work for any data
-### ***** set that can be returned by the random_pattern function.
-# tessellate(fixed_pattern_16) # <-- used for code development only, not marking
-tessellate(random_pattern())  # <-- used for assessment
+legend() # Draw legend
 
-# Exit gracefully
-# ***** Change the default argument to False if you want the
-# ***** cursor (turtle) to remain visible at the end of the
-# ***** program as a debugging aid
-release_drawing_canvas()
+tessellate(random_pattern())  # Fills cells with Disney characters
 
-#
-# --------------------------------------------------------------------#
+release_drawing_canvas() # Exit gracefully
