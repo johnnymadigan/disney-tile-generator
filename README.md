@@ -1,6 +1,7 @@
 ![unit](https://img.shields.io/badge/IFB104-Building%20IT%20Systems-ff69b4?style=plastic)
 ![author](https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic)
 ![year](https://img.shields.io/badge/Year-2019-lightgrey?style=plastic)
+![python version](https://img.shields.io/badge/Python%20version-2.7%20|%203.8-informational?style=plastic&logo=python)
 
                                    .x88888x.            x*8888x.:*8888: -"888;                                   
                                   :8**888888X.  :>     X   48888X/`8888H/`8888H
