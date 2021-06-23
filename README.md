@@ -27,7 +27,7 @@
 # About
 This project is my first *Python* assignment at the *Queensland University of Technology*. Using *Turtle Graphics*, the task requires us to design and easily reproduce complex visuals as tiles in a grid. Given a randomly generated pattern via nested lists, the program needs to read these instructions and populate the grid with these tiles accordingly. Tiles vary in size, design, with some broken.
 
-![project running animation](/img/eg.gif)
+![project running animation](/img/disney-project-eg.gif)
 
 # How to run via the Terminal
 - Launch your OS' terminal.
@@ -50,9 +50,6 @@ foo@bar:~$ python2 main.py
 - Follow the *Getting Started with Python* guide: https://code.visualstudio.com/docs/python/python-tutorial
 - Launch *VScode*.
 - Select *Python* Interpreter version 2.7 or 3.8.
-
-![python version](/img/py-version.png)
-
 - Open the project folder (*disney-project*) in *VScode*.
 - Select *main.py* and click run.
 
@@ -60,7 +57,7 @@ foo@bar:~$ python2 main.py
 
 # Call Graph
 
-![pyan3 generated call graph](/img/pyan3-call-graph.png)
+![pyan3 generated call graph](/img/disney-project-pyan3-call-graph.png)
 
 # Dependencies
 Relies on *Turtle Graphics* and therefore *tkinter*. If your *Python* Interpreter version supports *Tk* then you can use it to run the program. Versions 2.7 and 3.8 have been proven to work.
