@@ -17,6 +17,11 @@
                                     "8888     8%           Johnny Madigan
                                      `"888x:-"    https://johnnymadigan.github.io/
 
+- [What is this project?](#what-is-this-project)
+- [How to run via the terminal](#how-to-run-via-the-terminal)
+- [How to run via *Visual Studio Code*](#how-to-run-via-visual-studio-code)
+- [Dependencies](#dependencies)
+
 # What is this project?
 This project is my first *Python* assignment at the *Queensland University of Technology*. Using *Turtle Graphics*, the task requires us to design and easily reproduce complex visuals as tiles in a grid. Given a randomly generated pattern via nested lists, the program needs to read these instructions and populate the grid with these tiles accordingly. Tiles vary in size, design, with some broken.
 
