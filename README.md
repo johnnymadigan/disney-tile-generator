@@ -29,15 +29,15 @@ This project is my first *Python* assignment at the *Queensland University of Te
 
 # How to run via the Terminal
 - Launch your OS' terminal.
-- Navigate to the project folder (disney-project) with the "cd" command.
-- Confirm you are in the project folder with the "ls" command, you should see main.py among the files.
+- Navigate to the project folder (*disney-project*) with the 'cd' command.
+- Confirm you are in the project folder with the 'ls' command, you should see *main.py* among the files.
 
 ```zsh
 foo@bar:~$ ls
 README.md    goofy.py    main.py    ...
 ```
 
-- Type "python2 main.py" to launch the program
+- Type 'python2 main.py' to launch the program.
 
 ```zsh
 foo@bar:~$ python2 main.py
@@ -51,10 +51,10 @@ foo@bar:~$ python2 main.py
 
 ![run button](/img/py-version.png)
 
-- Open the project folder in *VScode*.
-- Select main.py and click run.
+- Open the project folder (*disney-project*) in *VScode*.
+- Select *main.py* and click run.
 
 ![run button](/img/run-button.png)
 
 # Dependencies
-Relies on *Turtle Graphics* and therefore *tkinter*. If your *Python* Interpreter version supports *Tk* then you can use that to run main.py. Versions 2.7 and 3.8 have been proven to work.
+Relies on *Turtle Graphics* and therefore *tkinter*. If your *Python* Interpreter version supports *Tk* then you can use it to run main.py. Versions 2.7 and 3.8 have been proven to work.
