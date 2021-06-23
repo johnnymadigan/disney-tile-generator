@@ -17,7 +17,7 @@
                                     "8888     8%           Johnny Madigan
                                      `"888x:-"    https://johnnymadigan.github.io/
 
-- [What is this project?](#about)
+- [About](#about)
 - [How to run via the terminal](#how-to-run-via-the-terminal)
 - [How to run via *Visual Studio Code*](#how-to-run-via-visual-studio-code)
 - [Call Graph](#call-graph)
