@@ -57,4 +57,4 @@ foo@bar:~$ python2 main.py
 ![run button](/img/run-button.png)
 
 # Dependencies
-Relies on *Turtle Graphics* and therefore *tkinter*. If your *Python* Interpreter version supports *Tk* then you can use it to run main.py. Versions 2.7 and 3.8 have been proven to work.
+Relies on *Turtle Graphics* and therefore *tkinter*. If your *Python* Interpreter version supports *Tk* then you can use it to run the program. Versions 2.7 and 3.8 have been proven to work.
