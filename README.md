@@ -17,15 +17,16 @@
                                     "8888     8%           Johnny Madigan
                                      `"888x:-"    https://johnnymadigan.github.io/
 
-- [What is this project?](#what-is-this-project)
+- [What is this project?](#about)
 - [How to run via the terminal](#how-to-run-via-the-terminal)
 - [How to run via *Visual Studio Code*](#how-to-run-via-visual-studio-code)
+- [Call Graph](#call-graph)
 - [Dependencies](#dependencies)
 
-# What is this project?
+# About
 This project is my first *Python* assignment at the *Queensland University of Technology*. Using *Turtle Graphics*, the task requires us to design and easily reproduce complex visuals as tiles in a grid. Given a randomly generated pattern via nested lists, the program needs to read these instructions and populate the grid with these tiles accordingly. Tiles vary in size, design, with some broken.
 
-![run button](/img/eg.gif)
+![project running animation](/img/eg.gif)
 
 # How to run via the Terminal
 - Launch your OS' terminal.
@@ -49,12 +50,16 @@ foo@bar:~$ python2 main.py
 - Launch *VScode*.
 - Select *Python* Interpreter version 2.7 or 3.8.
 
-![run button](/img/py-version.png)
+![python version](/img/py-version.png)
 
 - Open the project folder (*disney-project*) in *VScode*.
 - Select *main.py* and click run.
 
 ![run button](/img/run-button.png)
+
+# Call Graph
+
+![pyan3 generated call graph](/img/pyan3-call-graph.png)
 
 # Dependencies
 Relies on *Turtle Graphics* and therefore *tkinter*. If your *Python* Interpreter version supports *Tk* then you can use it to run the program. Versions 2.7 and 3.8 have been proven to work.

@@ -1,0 +1,99 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded",fillcolor="#80808018", label=""];
+        broken_tiles [label="broken_tiles", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        donald [label="donald", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="1"];
+        goofy [label="goofy", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="2"];
+        main [label="main", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="3"];
+        mickey [label="mickey", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="4"];
+        minnie [label="minnie", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="5"];
+        shapes [label="shapes", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="6"];
+        tiles [label="tiles", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="7"];
+        subgraph cluster_broken_tiles {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="broken_tiles"];
+            broken_tiles__break_large_tile [label="break_large_tile\n(broken_tiles.py:5)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            broken_tiles__break_small_tile [label="break_small_tile\n(broken_tiles.py:77)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            broken_tiles__break_tall_tile [label="break_tall_tile\n(broken_tiles.py:144)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+            broken_tiles__break_wide_tile [label="break_wide_tile\n(broken_tiles.py:203)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_donald {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="donald"];
+            donald__draw_donald [label="draw_donald\n(disney_icons/donald.py:4)", style="filled", fillcolor="#feeeccb2", fontcolor="#000000", group="1"];
+        }
+        subgraph cluster_goofy {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="goofy"];
+            goofy__draw_goofy [label="draw_goofy\n(disney_icons/goofy.py:4)", style="filled", fillcolor="#edfeccb2", fontcolor="#000000", group="2"];
+        }
+        subgraph cluster_main {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="main"];
+            main__create_drawing_canvas [label="create_drawing_canvas\n(main.py:74)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="3"];
+            main__legend [label="legend\n(main.py:296)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="3"];
+            main__random_pattern [label="random_pattern\n(main.py:207)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="3"];
+            main__release_drawing_canvas [label="release_drawing_canvas\n(main.py:91)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="3"];
+            main__tessellate [label="tessellate\n(main.py:345)", style="filled", fillcolor="#ccfeccb2", fontcolor="#000000", group="3"];
+        }
+        subgraph cluster_mickey {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="mickey"];
+            mickey__draw_mickey [label="draw_mickey\n(disney_icons/mickey.py:4)", style="filled", fillcolor="#ccfeeeb2", fontcolor="#000000", group="4"];
+        }
+        subgraph cluster_minnie {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="minnie"];
+            minnie__draw_minnie [label="draw_minnie\n(disney_icons/minnie.py:4)", style="filled", fillcolor="#ccedfeb2", fontcolor="#000000", group="5"];
+        }
+        subgraph cluster_shapes {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="shapes"];
+            shapes__draw_oval [label="draw_oval\n(shapes.py:7)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="6"];
+            shapes__draw_star [label="draw_star\n(shapes.py:22)", style="filled", fillcolor="#ccccfeb2", fontcolor="#000000", group="6"];
+        }
+        subgraph cluster_tiles {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="tiles"];
+            tiles__draw_large_tile [label="draw_large_tile\n(tiles.py:9)", style="filled", fillcolor="#eeccfeb2", fontcolor="#000000", group="7"];
+            tiles__draw_small_tile [label="draw_small_tile\n(tiles.py:30)", style="filled", fillcolor="#eeccfeb2", fontcolor="#000000", group="7"];
+            tiles__draw_tall_tile [label="draw_tall_tile\n(tiles.py:52)", style="filled", fillcolor="#eeccfeb2", fontcolor="#000000", group="7"];
+            tiles__draw_wide_tile [label="draw_wide_tile\n(tiles.py:76)", style="filled", fillcolor="#eeccfeb2", fontcolor="#000000", group="7"];
+        }
+    }
+        main -> main__legend [style="solid", color="#000000"];
+        main -> main__create_drawing_canvas [style="solid", color="#000000"];
+        main -> tiles [style="solid", color="#000000"];
+        main -> broken_tiles [style="solid", color="#000000"];
+        main -> main__release_drawing_canvas [style="solid", color="#000000"];
+        main -> main__random_pattern [style="solid", color="#000000"];
+        main -> main__tessellate [style="solid", color="#000000"];
+        main__legend -> tiles__draw_large_tile [style="solid", color="#000000"];
+        main__legend -> tiles__draw_small_tile [style="solid", color="#000000"];
+        main__legend -> tiles__draw_tall_tile [style="solid", color="#000000"];
+        main__legend -> tiles__draw_wide_tile [style="solid", color="#000000"];
+        main__tessellate -> broken_tiles__break_small_tile [style="solid", color="#000000"];
+        main__tessellate -> broken_tiles__break_wide_tile [style="solid", color="#000000"];
+        main__tessellate -> broken_tiles__break_tall_tile [style="solid", color="#000000"];
+        main__tessellate -> broken_tiles__break_large_tile [style="solid", color="#000000"];
+        main__tessellate -> tiles__draw_large_tile [style="solid", color="#000000"];
+        main__tessellate -> tiles__draw_small_tile [style="solid", color="#000000"];
+        main__tessellate -> tiles__draw_tall_tile [style="solid", color="#000000"];
+        main__tessellate -> tiles__draw_wide_tile [style="solid", color="#000000"];
+        tiles -> shapes [style="solid", color="#000000"];
+        broken_tiles -> shapes [style="solid", color="#000000"];
+        mickey -> shapes [style="solid", color="#000000"];
+        mickey__draw_mickey -> shapes__draw_star [style="solid", color="#000000"];
+        mickey__draw_mickey -> shapes__draw_oval [style="solid", color="#000000"];
+        minnie -> shapes [style="solid", color="#000000"];
+        minnie__draw_minnie -> shapes__draw_star [style="solid", color="#000000"];
+        minnie__draw_minnie -> shapes__draw_oval [style="solid", color="#000000"];
+        goofy -> shapes [style="solid", color="#000000"];
+        goofy__draw_goofy -> shapes__draw_star [style="solid", color="#000000"];
+        goofy__draw_goofy -> shapes__draw_oval [style="solid", color="#000000"];
+        donald -> shapes [style="solid", color="#000000"];
+        donald__draw_donald -> shapes__draw_star [style="solid", color="#000000"];
+        donald__draw_donald -> shapes__draw_oval [style="solid", color="#000000"];
+    }

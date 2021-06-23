@@ -430,7 +430,6 @@ title("Disney Icons") # Window title
 
 create_drawing_canvas('#F5F5F5') # Hex codes: white smoke
 
-
 # Fills cells with Disney characters
 # 1st param is a bool, True to show turtle drawing at a defined speed
 # 2nd param is an int, drawing speed increases from 1-10 (exception: 0 = fastest)
