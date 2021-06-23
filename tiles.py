@@ -1,9 +1,10 @@
 from turtle import *
 import shapes
-import mickey
-import minnie
-import donald
-import goofy
+
+from disney_icons import mickey
+from disney_icons import minnie
+from disney_icons import donald
+from disney_icons import goofy
 
 def draw_large_tile():
     """
