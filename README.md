@@ -25,7 +25,7 @@
 - [Dependencies](#dependencies)
 
 # About
-This project is my first *Python* assignment at the *Queensland University of Technology*. Using *Turtle Graphics*, the task requires us to design and easily reproduce complex visuals as tiles in a grid. Given a randomly generated pattern via nested lists, the program needs to read these instructions and populate the grid with these tiles accordingly. Tiles vary in size, design, with some broken.
+This project was my first *Python* assignment at the *Queensland University of Technology*. Using *Turtle Graphics*, the task requires us to design and easily reproduce complex visuals as tiles in a grid. Given a randomly generated pattern via nested lists, the program needs to read these instructions and populate the grid with these tiles accordingly. Tiles vary in size, design, with some broken.
 
 ![project running animation](/img/disney-project-eg.gif)
 
