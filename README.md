@@ -3,20 +3,22 @@
 ![year](https://img.shields.io/badge/Year-2019-lightgrey?style=plastic)
 ![python version](https://img.shields.io/badge/Python%20version-2.7%20|%203.8-informational?style=plastic&logo=python)
 
-                                   .x88888x.            x*8888x.:*8888: -"888;                                   
-                                  :8**888888X.  :>     X   48888X/`8888H/`8888H
-                                  f    `888888x./     X8x.  8888X  8888X  8888X;
-                                 '       `*88888~     X8888 X8888  88888  88888;
-                                  \.    .  `?)X.      '*888!X8888  X8888  X8888;
-                                   `~=-^   X88> ~       `?8 `8888  X888X  X888X
-                                          X8888  ~      ~"  '888"  X888   X888
-                                          488888           !888;  !888;  !888;
-                                  .xx.     88888X         888!   888!   888!
-                                 '*8888.   '88888>       88"    88"    88"
-                                   88888    '8888>        "~     "~     "~
-                                   `8888>    `888                       
-                                    "8888     8%           Johnny Madigan
-                                     `"888x:-"    https://johnnymadigan.github.io/
+```
+    .x88888x.            x*8888x.:*8888: -"888;
+   :8**888888X.  :>     X   48888X/`8888H/`8888H
+   f    `888888x./     X8x.  8888X  8888X  8888X;
+  '       `*88888~     X8888 X8888  88888  88888;
+   \.    .  `?)X.      '*888!X8888  X8888  X8888;
+    `~=-^   X88> ~       `?8 `8888  X888X  X888X
+           X8888  ~      ~"  '888"  X888   X888
+           488888           !888;  !888;  !888;
+   .xx.     88888X         888!   888!   888!
+  '*8888.   '88888>       88"    88"    88"
+    88888    '8888>        "~     "~     "~
+    `8888>    `888                           
+     "8888     8%           Johnny Madigan
+      `"888x:-"    https://johnnymadigan.github.io/
+```
 
 - [About](#about)
 - [How to run via the terminal](#how-to-run-via-the-terminal)
