@@ -2,8 +2,6 @@
 ![author](https://img.shields.io/badge/Author-Johnny%20Madigan-yellow?style=plastic)
 ![year](https://img.shields.io/badge/Year-2019-lightgrey?style=plastic)
 ![python version](https://img.shields.io/badge/Python%20version-2.7%20|%203.8-informational?style=plastic&logo=python)
- 
-<p align="center">𝔍𝔬𝔥𝔫𝔫𝔶 𝔐𝔞𝔡𝔦𝔤𝔞𝔫</p>
 
 - [About](#about)
 - [How to run via the terminal](#how-to-run-via-the-terminal)
@@ -12,7 +10,7 @@
 - [Dependencies](#dependencies)
 
 # About
-This project was my first *Python* assignment at the *Queensland University of Technology*. Using *Turtle Graphics*, the task requires us to design and easily reproduce complex visuals as tiles in a grid. Given a randomly generated pattern via nested lists, the program needs to read these instructions and populate the grid with these tiles accordingly. Tiles vary in size, design, with some broken.
+This was my first *Python* project at the *Queensland University of Technology*. Using *Turtle Graphics*, the task requires us to design and easily reproduce complex visuals as tiles in a grid. Given a randomly generated pattern via nested lists, the program needs to read these instructions and populate the grid with these tiles accordingly. Tiles vary in size, design, with some broken.
 
 ![project running animation](/img/disney-project-eg.gif)
 
