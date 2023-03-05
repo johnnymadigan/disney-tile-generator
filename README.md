@@ -3,24 +3,21 @@
 ![python](https://img.shields.io/badge/Python-informational?style=plastic&logo=python)
 
 - [About](#about)
-- [Run](#run)
 - [Call Graph](#call-graph)
 - [Dependencies](#dependencies)
 
 # **About**
-Given an API for generating random patterns, the app can read these instructions and populate the grid with specific tiles. Tiles are unique complex visuals designed using Turtle Graphics.
+Consumes an API for generating random patterns and populates a grid of Disney themed tiles accordingly.
+
+Each tile is unique with a complex design using Turtle graphics.
+
+Run: `python3 main.py`
 
 ![project running animation](/img/disney-project-eg.gif)
-
-# **Run**
-
-```sh
-python3 main.py
-```
 
 # **Call Graph**
 
 ![pyan3 generated call graph](/img/disney-project-pyan3-call-graph.png)
 
 # **Dependencies**
-Relies on **Turtle Graphics** and therefore **tkinter**. If your **Python** Interpreter version supports **Tk** then you can use it to run the program. Versions 2.7 and 3.8 have been proven to work.
+Turtle graphics and ∴ tkinter. Python versions 2.7 and 3.8 support tkinter and have been tested.
