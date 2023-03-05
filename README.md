@@ -5,7 +5,7 @@
 # **Disney Tile Generator**
 Consumes an API for generating random patterns and populates a grid of Disney themed tiles accordingly.
 
-Each tile is unique with a complex design using Turtle graphics.
+Requires Turtle graphics and ∴ tkinter, Python 2.7 and 3.8 have been tested.
 
 Run: `python3 main.py`
 
@@ -14,8 +14,3 @@ Run: `python3 main.py`
 # **Call Graph**
 
 ![pyan3 generated call graph](/img/disney-project-pyan3-call-graph.png)
-
-# **Requires**
-Turtle graphics and ∴ tkinter.
-
-Python versions 2.7 and 3.8 support tkinter and have been tested.
